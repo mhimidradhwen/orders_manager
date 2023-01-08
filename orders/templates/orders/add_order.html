@@ -1,0 +1,55 @@
+{% extends 'customers/base.html' %}
+{% block content %}
+        <div class="container mt-4">
+
+          <h3> Add Product</h3>
+                          <form action="" method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group ">
+                                <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Customer</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="customer">
+                                  {% for cs in customers %}
+                                  <option value="{{cs.name}}">{{cs.name}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+
+                              <div class="form-group ">
+                                <label for="exampleFormControlSelect2" class="col-sm-2 col-form-label">Product</label>
+                                <select class="form-control" id="exampleFormControlSelect2" name="product">
+                                  {% for pr in products %}
+                                  <option value="{{pr.name}}">{{pr.name}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+
+                            <div class="form-group ">
+                              <label for="name" class="col-sm-2 col-form-label">Quantity</label>
+                            <input type="text"  class="form-control" id="name" name="quantity">
+                              </div>
+                           
+                           
+
+
+
+
+                        <div class="form-group row">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-warning" onclick="history.back()">Back</button>
+                                            </td>
+                                        <td>
+                                        <button type="submit" class="btn btn-primary" >Add</button>
+                                        </td>
+                                        
+                                    </tr>
+                                </table>
+
+
+            </div>
+                        </form>
+                    </div>
+
+    {% endblock content %}

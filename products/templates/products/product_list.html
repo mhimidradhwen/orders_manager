@@ -1,0 +1,39 @@
+{% extends 'customers/base.html' %}
+{% block content %}
+    <div class="container mt-4">
+      
+        <h1>Products</h1>
+
+        <ul class="navbar-nav" >
+                <a class="btn btn-primary" href="{% url 'add_product' %}">Add Product</a>
+
+        </ul>
+        
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for pr in products %}
+                    <tr>
+                        <th scope="row"><a href="{% url 'product_detail' pr.id %}">View</a></th>
+                        <td>{{pr.id}}</td>
+                        <td>{{pr.name}}</td>
+                        <td>{{pr.price}}</td>
+                        <td>{{pr.description}}</td>
+                        <td><a class ="btn-sm btn-info" href="{% url 'update_product' pr.id %}">Update</a>
+                        <a class ="btn-sm btn-danger" href="{% url 'delete_product' pr.id %}">Delete</a></td>
+                      </tr>
+                    {% endfor %}
+                  
+                  
+                </tbody>
+              </table>
+              {% endblock content %}

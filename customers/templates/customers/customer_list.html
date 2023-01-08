@@ -1,0 +1,66 @@
+{% extends 'customers/base.html' %}
+{% block content %}
+        <div class="container mt-4">
+          
+            <h1>Customers</h1>
+    
+            <ul class="navbar-nav" >
+                    <a class="btn btn-primary" href="{% url 'add_customer' %}">Add Customer</a> 
+    
+            </ul>
+            <div class="container mt-4">
+
+            <form method="GET">
+              <table class="table">
+
+              
+              <div class="form-group ">
+              {{myfilter.form}}
+
+              {% comment %} <label for="value" class="col-sm-2 col-form-label">Quantity</label> {% endcomment %}
+            {% comment %} <input type="text"  class="form-control" id="value" name="value">
+              <a class ="btn-sm btn-primary" href="{% url 'search_customer' %}" >Search</a> {% endcomment %}
+              </div>
+              
+          </table>
+          <div class="form-group ">
+            <button type="submit" class="btn btn-primary" >Search</button>
+          </div>
+          </form>
+        </div>
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Adress</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for cs in customers %}
+                        <tr>
+                            <th scope="row"><a href="{% url 'customer_detail' cs.id %}">View</a></th>
+                            <td>{{cs.id}}</td>
+                            <td>{{cs.name}}</td>
+                            <td>{{cs.email}}</td>
+                            <td>{{cs.phone}}</td>
+                            <td>{{cs.address}}</td>
+                            
+                            
+                             <td>
+                              {% comment %}
+                              <a class ="btn-sm btn-info" href="{% url 'update_product' pr.id %}">Update</a> {% endcomment %}
+                            <a class ="btn-sm btn-danger" href="{% url 'delete_customer' cs.id %}">Delete</a></td> 
+                          </tr>
+                        {% endfor %}
+                      
+                      
+                    </tbody>
+                  </table>
+        </div>
+        {% endblock content %}

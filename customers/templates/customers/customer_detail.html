@@ -1,0 +1,74 @@
+{% extends 'customers/base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Customer Details</h2>
+    <hr>
+
+    <div class="card mt-4">
+      <div class="row no-gutters">
+  
+        <div class="col-md">
+          <div class="card-body">
+            <h3 class="card-title">Customer ID: {{cs.id}}</h3>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <td>{{cs.name}}</td>
+                </tr>
+                <tr>
+                  <th>Address</th>
+                  <td>{{cs.address}}</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td>{{cs.phone}}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{cs.email}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="javascript:history.back()" class="btn btn-warning">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card mt-4">
+      <div class="row no-gutters">
+  
+        <div class="col-md">
+          <div class="card-body">
+            <h4 class="card-title">Orders</h4>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th>ID</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Date</th>
+
+                </tr>
+                {% for or in orders %}
+                <tr>
+                  <td>{{or.id}}</td>
+                  <td>{{or.product.name}}</td>
+                  <td>{{or.quantity}}</td>
+                  <td>{{or.price}}</td>
+                  <td>{{or.date_placed}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'customers/base.html' %}
+{% block content %}
+
+<div class="container mt-8">
+      
+    <h1>Orders</h1>
+
+    <ul class="navbar-nav" >
+            <a class="btn btn-primary" href="{% url 'add_order' %}">Add Order</a>
+
+    </ul>      
+
+
+
+<hr>
+
+
+<h4>Delivred Orders : {{delivred_number}}</h4>
+    <div class="container mt-4">
+
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Product</th>
+          <th>Delivery Date</th>
+
+        </thead>
+        <tbody>
+  {% for dl in delivred %}
+          <tr>
+            <td>
+              {{dl.id}}
+            </td>
+            
+              <td>
+                {{dl.customer.name}}
+              </td>
+                <td>
+                  {{dl.product.name}}
+                </td>
+                  <td>
+                    {{dl.date_fulfilled}}
+                  </td>
+          </tr>
+  {% endfor %}
+        </tbody>
+<style>
+  .mt-4 {
+    background: lightgreen;
+} 
+ 
+</style>
+    </div>
+      </table>
+    </div>
+    <h4>All Orders : {{all_orders_number}}</h4>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">id</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date placed</th>
+                <th scope="col">Delivery</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for or in orders %}
+                <tr style="background : {{or.state}} ">
+                    <th scope="row"><a href="{% url 'order_detail' or.id %}">View</a></th>
+                    <td>{{or.id}}</td>
+                    <td>{{or.customer.name}}</td>
+                    <td>{{or.product.name}}</td>
+                    <td>{{or.quantity}}</td>
+                    <td>{{or.price}}</td>
+                    <td>{{or.date_placed}}</td>
+                    
+                    <td>
+                      <a class ="btn-sm btn-success" {{button_state}}href="{% url 'deliver_order' or.id %} ">Deliver</a>
+                    </td>
+                    <td><a class ="btn-sm btn-info" href="#">Update</a>
+                    <a class ="btn-sm btn-danger" href="{% url 'delete_order' or.id %}">Delete</a></td>
+
+                  </tr>
+                {% endfor %}
+              
+              
+            </tbody>
+          </table>
+        </div>
+    
+        
+{% endblock content %}
+        </div>

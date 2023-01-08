@@ -1,0 +1,53 @@
+{% extends 'customers/base.html' %}
+{% block content %}
+        <div class="container mt-4">
+
+          <h3>Product ID : {{pr.id}} </h3>
+
+                          <form>
+                            <div class="form-group row">
+
+
+                              <label for="name" class="col-sm-2 col-form-label">Name</label>
+                              <div class="col-sm-10">
+                                <input type="text" readonly class="form-control" id="name" value="{{pr.name}}">
+                              </div>
+                           
+                            </div>
+                            <div class="form-group row">
+
+                            <label for="Price" class="col-sm-2 col-form-label">Price</label>
+                            <div class="col-sm-10">
+                              <input type="text" readonly class="form-control" id="Price" value="{{pr.price}}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+
+                          <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                          <div class="col-sm-10">
+                            <input type="text" readonly class="form-control" id="Description" value="{{pr.description}}">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+
+                          <label for="Total" class="col-sm-2 col-form-label">Total orders</label>
+                          <div class="col-sm-10">
+                            <input type="text" readonly class="form-control" id="Total" value="{{total}}">
+                          </div>
+                    
+                      </div>
+                        <div class="form-group row">
+                          
+
+                        <a class="btn btn-warning" href="{% url 'product_list' %}">Back</a>
+
+                            </div>
+                        </div>
+                        </form>
+                        
+                      
+                      </div>
+
+    {% endblock content %}

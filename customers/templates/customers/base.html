@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+      * {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .navbar {
+        background-color: #3498db;
+      }
+      .nav-link {
+        color: white;
+      }
+      .nav-link:hover {
+        color: #bdc3c7;
+      }
+      .navbar-brand {
+        color: white;
+      }
+      .nav-link i {
+        color: white;
+      }
+      .navbar .nav-link {
+        border: 0px solid white;
+        border-radius: 15px;
+        padding: 0.5em 1em;
+      }
+      
+      .navbar .nav-link:hover {
+        background-color: white;
+        color: #3498db;
+      }
+      .navbar .nav-link i {
+        transition: all 0.2s;
+      }
+      
+      .navbar .nav-link:hover i {
+        color: #3498db;
+      }
+                  
+    </style>
+    <title>{% block title %}Orders Manager{% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        Orders Manager
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% comment %} <li class="nav-item active">
+            <a class="nav-link" href="{% url 'customer_list' %}">Customers</a> {% endcomment %}
+          <li class="nav-item"> 
+                        <a class="nav-link" href="{% url 'product_list' %}">
+              <i class="fas fa-box"></i> Products
+            </a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="{% url 'customer_list' %}">
+              <i class="fas fa-users"></i> Customers
+            </a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="{% url 'order_list' %}">
+              <i class="fas fa-shopping-cart"></i> Orders
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  </body>
+</html>
+
