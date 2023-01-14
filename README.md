@@ -7,8 +7,6 @@ This project is a web application built with Django and Bootstrap that allows us
 
 ## Appendix
 
-Any additional information goes here
-
 This Order Manager application allows users to:
 
 * Create and manage customers
