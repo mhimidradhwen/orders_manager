@@ -54,7 +54,7 @@ This project is licensed under the [MIT License](https://github.com/mhimidradhwe
 
 ## Contributions
 
-We welcome contributions from the community. If you're interested in contributing, please read the [CONTRIBUTING.md](https://github.com/mhimidradhwen/orders-manager/blob/main/CONTRIBUTING.md) file for more information.
+We welcome contributions from the community. If you're interested in contributing, please read the [CONTRIBUTING.md](https://github.com/mhimidradhwen/orders_manager/blob/master/CONTRIBUTING.md) file for more information.
 
 ## Acknowledgments
 
