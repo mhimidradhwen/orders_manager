@@ -4,7 +4,7 @@ We welcome contributions to the Order Manager project! If you're interested in h
 
 ## Code of Conduct
 
-We expect all contributors to the Order Manager project to follow our [code of conduct](https://github.com/mhimidradhwen/orders_manager/blob/mhimidradhwen-patch-1/CODE_OF_CONDUCT.md). Please make sure you understand and agree to these guidelines before contributing.
+We expect all contributors to the Order Manager project to follow our [code of conduct](https://github.com/mhimidradhwen/orders_manager/blob/CODE_OF_CONDUCT.md). Please make sure you understand and agree to these guidelines before contributing.
 
 ## How to contribute
 
