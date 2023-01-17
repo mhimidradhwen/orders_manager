@@ -64,4 +64,3 @@ We welcome contributions from the community. If you're interested in contributin
 ## Thanks
 
 Thanks for checking out the Order Manager project! We hope you find it useful. If you have any suggestions or feedback, please let us know by creating an issue on GitHub.
-
