@@ -60,6 +60,7 @@ We welcome contributions from the community. If you're interested in contributin
 
 - Django documentation
 - Bootstrap documentation
+- [Django-Basics](https://github.com/mhimidradhwen/crash-courses/blob/master/Django-Basics.md)
 
 ## Thanks
 
